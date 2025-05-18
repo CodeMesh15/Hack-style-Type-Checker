@@ -1,0 +1,36 @@
+cabal-version:      2.4
+name:               hack-type-checker
+version:            0.1.0.0
+synopsis:           A functional-style static type checker inspired by HHVM/Hack
+description:        A Haskell implementation of a static type checker for a simplified Hack-like language
+license:           MIT
+author:            Your Name
+maintainer:        your.email@example.com
+category:          Language
+build-type:        Simple
+
+library
+  exposed-modules:  AST
+                  , TypeChecker
+  build-depends:    base ^>=4.14.1.0
+                  , text ^>=1.2.4.1
+                  , containers ^>=0.6.5.1
+                  , mtl ^>=2.2.2
+  hs-source-dirs:   src
+  default-language: Haskell2010
+  ghc-options:      -Wall -Werror
+
+test-suite hack-type-checker-test
+  type:             exitcode-stdio-1.0
+  main-is:          Main.hs
+  other-modules:    AST
+                  , TypeChecker
+  build-depends:    base ^>=4.14.1.0
+                  , text ^>=1.2.4.1
+                  , containers ^>=0.6.5.1
+                  , mtl ^>=2.2.2
+                  , tasty ^>=1.4.2.1
+                  , tasty-hunit ^>=0.10.0.3
+  hs-source-dirs:   test
+  default-language: Haskell2010
+  ghc-options:      -Wall -Werror 
